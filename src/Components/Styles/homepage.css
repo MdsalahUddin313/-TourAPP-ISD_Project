@@ -1,0 +1,10 @@
+.htypes{
+    font-family: 'Acme', sans-serif;
+    margin-top: 25px;
+    margin-bottom:25px;
+}
+.top_places{
+    background-image: url("../Assets/header-bg.png");
+    background-repeat: no-repeat;
+
+}

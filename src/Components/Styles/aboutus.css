@@ -1,0 +1,52 @@
+.image_header{
+    margin-top: 0;
+    padding-top: 200px;
+    padding-bottom: 300px;
+    background-image: url('https://i.pinimg.com/originals/7a/0e/bd/7a0ebdcfc2164e734e85f0d123e10832.jpg');
+    background-repeat: no-repeat;
+    background-attachment: fixed;  
+    background-size: cover;
+}
+
+.header_one{  
+    font-family: 'Homemade Apple';
+    color: white;
+}
+
+.header_two{  
+    margin-top:60px;
+    color: white;
+    font-weight: bold;
+    font-size: 35px;
+    font-family: 'Tangerine';
+}
+
+.our_test_header{
+    margin-top:65px;
+    font-family: 'Kreon';
+}
+.profile_images{
+    width:500px;
+    height:300px;
+    margin-top: 15px;
+    padding-left: 5px;
+}
+.profile_images_two{
+    width:450px;
+    height:300px;
+    margin-top: 25px;
+    padding-right: 5px;
+    
+}
+.team_member_name{
+    margin-top: 50px;
+    font-family:'Lucida Sans';
+    font-size: 25px;
+}
+.description_team{
+    font-size:16px;
+}
+
+.icon-spaces{
+    margin: 10px 15px;
+}
