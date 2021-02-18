@@ -62,7 +62,8 @@ const useStyles = makeStyles((theme) => ({
   },
   paragraph_font_color: {
     color:"white",
-    marginTop:"25px"
+    marginTop:"25px",
+    fontSize:"15px"
   },
 }));
 
@@ -74,7 +75,17 @@ export default function Contactus() {
       <CssBaseline />
       <Grid item xs={false} sm={4} md={7} className={classes.image} >
         <h1 className={classes.header_font_color}>How can we help you? </h1>
+       
         <p className={classes.paragraph_font_color}>If you have any suggestions and query then<br/> please fill out our contact form .....</p>
+      
+        <h1 className={classes.header_font_color}>Our Address </h1>
+
+        <p className={classes.paragraph_font_color}>22/b Hajrat Shahjalal Airport<br/> Airport Road,Dhaka .....</p>
+
+        <h1 className={classes.header_font_color}>Our Contact</h1>
+
+        <p className={classes.paragraph_font_color}>019xxxxx21<br/> asdassk@gmail.com</p>
+      
       </Grid>
       <Grid item xs={12} sm={8} md={5} component={Paper} elevation={6} square>
         <div className={classes.paper}>

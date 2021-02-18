@@ -9,6 +9,13 @@ import ImageGridList from './SurfaceInputs/ImageGridList';
 import StickyFooter from './Footer/StickyFooter';
 import './Styles/homepage.css';
 import LeftBar from './SurfaceInputs/LeftBar';
+import StickyHeader from './SurfaceInputs/StickyHeader';
+import Gridimages from './SurfaceInputs/Gridimages';
+
+import Card_two from './Property_holders/Card_two';
+import DestinationForm from './SurfaceInputs/DestinationForm';
+import Header_two from './Header/Header_two';
+
 const HomePage = () => {
     const elements = ['','',''];
     const card_style ={};
@@ -17,14 +24,15 @@ const HomePage = () => {
    
     return (
         <div>
-            <LeftBar></LeftBar>
+            <Header></Header>
+            <Header_two></Header_two>
             <Carosoul_Inputs></Carosoul_Inputs>
 
       
+           <DestinationForm></DestinationForm>
 
 
-
-            <h1 className="htypes">Top places</h1>
+            <h1 className="htypes">Top Restrurents</h1>
         <div class="top_places">
             <Container>
                <Row>
@@ -41,14 +49,30 @@ const HomePage = () => {
             </div>
 
 
+            <h1 className="htypes">Top Cities</h1>
+            
+            <>
 
-        
+       <Container>
+          <Row>
+          <Col xs={6} md={3}><Card_two></Card_two></Col>
+          <Col xs={6} md={3}><Card_two></Card_two></Col>
+          <Col xs={6} md={3}><Card_two></Card_two></Col>
+          <Col xs={6} md={3}><Card_two></Card_two></Col>
+
+          </Row>
+        </Container>
+        </>
+
+
+  {/*Gallery */}
+   
         <h1 className="htypes">Gallery</h1>
 
 
-           <ImageGridList></ImageGridList>
+           <Gridimages></Gridimages>
 
-
+  {/*Dream Places */}
            <h1 className="htypes">Dream Places</h1>
 
 
@@ -65,7 +89,7 @@ const HomePage = () => {
            </Row>
             </Container>
 
-      
+      {/*Footer */}
             <StickyFooter></StickyFooter>
            
         </div>

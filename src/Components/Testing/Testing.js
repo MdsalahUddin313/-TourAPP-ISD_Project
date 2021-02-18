@@ -1,5 +1,17 @@
 import React from 'react';
 import {useEffect,useState} from 'react';
+import Header_two from '../Header/Header_two';
+import CardOne_simple from '../Property_holders/CardOne_simple';
+import Card_two from '../Property_holders/Card_two';
+import Filter from '../Property_holders/Filter';
+import HotelList from '../Property_holders/Hotels/HotelList';
+import SingleHotelPage from '../Property_holders/Hotels/SingleHotelPage';
+import SearchFilters from '../Property_holders/SearchFilters';
+import Singlebus from '../Property_holders/Transpots/Singlebus';
+import StepsIndex from '../StepsForTourplan/StepsIndex';
+import Gridimages from '../SurfaceInputs/Gridimages';
+import DestinationForm from '../SurfaceInputs/DestinationForm';
+import Steps from '../SurfaceInputs/Steps';
 const Testing = () => {
 
     const [valueState, setvalueState] = useState([]);
@@ -61,11 +73,31 @@ const Testing = () => {
             {console.log(valueState)}
 
             {valueState.map((a)=>{return <p>{a.firstname}</p>})}
-         
+            <h1>1</h1>
+           <CardOne_simple></CardOne_simple>
+           <h1>2</h1>
+           <Card_two></Card_two>
+           <Gridimages></Gridimages>
+           <DestinationForm></DestinationForm>
+           <Header_two></Header_two>
            
            
+           <Filter></Filter>
+
+
+           <SearchFilters></SearchFilters>
+
+
+           <HotelList></HotelList>
+           <SingleHotelPage></SingleHotelPage>
+
+           <Singlebus></Singlebus>
            
-           
+           <h1>Plan your tour</h1>
+           <Steps></Steps>
+
+
+           <StepsIndex></StepsIndex>
         </div>
     );
 };

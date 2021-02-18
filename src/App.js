@@ -36,7 +36,12 @@ import LeftBar from './Components/SurfaceInputs/LeftBar';
 import Contactus from './Components/ContactUs/Contactus';
 import Cindex from './Components/ContactUs/Cindex';
 import AboutIndex from './Components/Aboutus/AboutIndex';
-
+import HotelIndex from './Components/Property_holders/Hotels/HotelIndex';
+import TransportIndex from './Components/Property_holders/Transpots/TransportIndex';
+import SingleHotelPage from './Components/Property_holders/Hotels/SingleHotelPage';
+import DestinationForm from './Components/SurfaceInputs/DestinationForm';
+import Steps from './Components/SurfaceInputs/Steps';
+import StepsIndex from './Components/StepsForTourplan/StepsIndex';
 function App() {
   return (
     <Router>
@@ -55,6 +60,13 @@ function App() {
       <Route exact path='/leftbars' component={LeftBar}/>
       <Route exact path='/contactus' component={Cindex}/>
       <Route exact path='/aboutus' component={AboutIndex}/>
+      <Route exact path='/hotels' component={HotelIndex}/>
+      <Route exact path='/singlehotels' component={SingleHotelPage}/>
+      <Route exact path='/transports' component={TransportIndex}/>
+      <Route exact path='/tourplan' component={StepsIndex}/>
+
+
+
 
 
       
