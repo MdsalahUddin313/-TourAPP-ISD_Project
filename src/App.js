@@ -22,6 +22,7 @@ import '@material-ui/core/';
 import Carousel from 'react-bootstrap/Carousel';
 import HomePage from './Components/HomePage';
 import { BrowserRouter as Router,Route,Switch,Link } from 'react-router-dom';
+import {BrowserRouter} from 'react-router-dom';
 import Error from './Components/Errors/Error';
 import Testing from './Components/Testing/Testing';
 import SignInSide from './Components/Authintication/SignInSide';
@@ -42,6 +43,14 @@ import SingleHotelPage from './Components/Property_holders/Hotels/SingleHotelPag
 import DestinationForm from './Components/SurfaceInputs/DestinationForm';
 import Steps from './Components/SurfaceInputs/Steps';
 import StepsIndex from './Components/StepsForTourplan/StepsIndex';
+import Logintesting from './Components/Testing/BlogPosts/Logintesting';
+import {useCookies} from 'react-cookie';
+import {useHistory} from 'react-router-dom';
+import {CookiesProvider} from 'react-cookie';
+import BlogsIndex from './Components/Testing/BlogPosts/BlogsIndex';
+import Header_two from './Components/Header/Header_two';
+import Header_three from './Components/Header/Header_three';
+
 function App() {
   return (
     <Router>
@@ -49,22 +58,35 @@ function App() {
        
   
     <Switch>
-      <Route exact path='/'><HomePage/></Route> 
-      <Route exact path='/testing' component={Testing}/>
-      <Route exact path='/signin' component={SignInSide}/>
-      <Route exact path='/signup' component={SignUp}/>
-      <Route exact path='/checkout' component={Checkout}/>
-      <Route exact path='/blogs' component={Blog}/>
-      <Route exact path='/carosoul' component={Carosoul_Inputs}/>
-      <Route exact path='/grids' component={StickyFooter}/>
-      <Route exact path='/leftbars' component={LeftBar}/>
-      <Route exact path='/contactus' component={Cindex}/>
-      <Route exact path='/aboutus' component={AboutIndex}/>
-      <Route exact path='/hotels' component={HotelIndex}/>
-      <Route exact path='/singlehotels' component={SingleHotelPage}/>
-      <Route exact path='/transports' component={TransportIndex}/>
-      <Route exact path='/tourplan' component={StepsIndex}/>
+    <Route exact path='/login' component={Logintesting}/>
 
+
+<Route exact path='/'><HomePage/></Route> 
+<Route exact path='/testing' component={Testing}/>
+<Route exact path='/signin' component={SignInSide}/>
+<Route exact path='/signup' component={SignUp}/>
+<Route exact path='/checkout' component={Checkout}/>
+<Route exact path='/blogs' component={Blog}/>
+<Route exact path='/carosoul' component={Carosoul_Inputs}/>
+<Route exact path='/grids' component={StickyFooter}/>
+<Route exact path='/leftbars' component={LeftBar}/>
+<Route exact path='/contactus' component={Cindex}/>
+<Route exact path='/aboutus' component={AboutIndex}/>
+<Route exact path='/hotels' component={HotelIndex}/>
+<Route exact path='/singlehotels' component={SingleHotelPage}/>
+<Route exact path='/transports' component={TransportIndex}/>
+<Route exact path='/tourplan' component={StepsIndex}/>
+
+<Route exact path='/blogpost' component={BlogsIndex}/>
+<Route exact path='/headertwo' component={Header_three}/>
+
+
+
+<CookiesProvider>
+      <BrowserRouter>
+     
+      </BrowserRouter>
+      </CookiesProvider>
 
 
 

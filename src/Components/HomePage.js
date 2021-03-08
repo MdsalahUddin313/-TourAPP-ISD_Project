@@ -16,6 +16,7 @@ import Card_two from './Property_holders/Card_two';
 import DestinationForm from './SurfaceInputs/DestinationForm';
 import Header_two from './Header/Header_two';
 
+
 const HomePage = () => {
     const elements = ['','',''];
     const card_style ={};
@@ -25,7 +26,7 @@ const HomePage = () => {
     return (
         <div>
             <Header></Header>
-            <Header_two></Header_two>
+            <Header_two className="sticky-top"></Header_two>
             <Carosoul_Inputs></Carosoul_Inputs>
 
       

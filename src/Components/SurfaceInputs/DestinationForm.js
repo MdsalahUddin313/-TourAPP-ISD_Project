@@ -1,6 +1,6 @@
 import React from 'react';
 import {Form,Col,Row,Container,Button,Card} from 'react-bootstrap';
-
+import {Link} from 'react-router-dom';
 
 function handleLink(){
   window.open("/tourplan");
@@ -49,7 +49,7 @@ const DestinationForm = () => {
 
     <Col>
     <Button type="submit" className="my-2">
-      <a href="/tourplan" style={ancor_style}>Submit </a>
+      <Link to="/tourplan" style={ancor_style}>Submit </Link>
     </Button>
     </Col>
   </Row>

@@ -1,5 +1,5 @@
 import React from 'react';
-import {useEffect,useState} from 'react';
+import {useEffect,useState,useHistory,useCookies} from 'react';
 import Header_two from '../Header/Header_two';
 import CardOne_simple from '../Property_holders/CardOne_simple';
 import Card_two from '../Property_holders/Card_two';
@@ -12,16 +12,41 @@ import StepsIndex from '../StepsForTourplan/StepsIndex';
 import Gridimages from '../SurfaceInputs/Gridimages';
 import DestinationForm from '../SurfaceInputs/DestinationForm';
 import Steps from '../SurfaceInputs/Steps';
+import APIService from '../APIClients/APIService';
+
+
+
+
+
 const Testing = () => {
+    //const [username, setUsername] = useState('');
+   // const [password, setPassword] = useState('');
+    // const [token, setToken] = useCookies(['mytoken']);
+    // const [isLogin, setLogin] = useState(true);
+    // let history = useHistory();
 
     const [valueState, setvalueState] = useState([]);
     const [resultData, setresultData] = useState([]);
     const [rData, setrData] = useState([]);
 
 
+
+
     const Userurls="http://127.0.0.1:8000/api/apis/authors/";
     var id=0,i=0;
 
+
+    // const loginBtn = () => {
+    //     APIService.LoginUser({username, password})
+    //     .then(resp => setToken('mytoken',resp.token))
+    //     .catch(error => console.log(error))
+    
+    // }
+    // useEffect(() => {
+    //     if(token['mytoken']) {
+    //         history.push('/articles')
+    //     }
+    // }, [token])
     // function arrayData(data){
 
     //     var myObject=JSON.parse(data);
@@ -32,6 +57,20 @@ const Testing = () => {
 
     //     }
     // }
+
+
+
+   
+
+
+    // const RegisterBtn = () => {
+    //     APIService.RegisterUser({username, password})
+    //     .then(() =>  loginBtn())
+    //     .catch(error =>console.log(error))
+
+    // }
+
+
 
     const arrayData=(length)=>{
 
@@ -74,32 +113,32 @@ const Testing = () => {
 
             {valueState.map((a)=>{return <p>{a.firstname}</p>})}
             <h1>1</h1>
-           <CardOne_simple></CardOne_simple>
-           <h1>2</h1>
-           <Card_two></Card_two>
-           <Gridimages></Gridimages>
-           <DestinationForm></DestinationForm>
-           <Header_two></Header_two>
+
+
+
+            
            
-           
-           <Filter></Filter>
-
-
-           <SearchFilters></SearchFilters>
-
-
-           <HotelList></HotelList>
-           <SingleHotelPage></SingleHotelPage>
-
-           <Singlebus></Singlebus>
-           
-           <h1>Plan your tour</h1>
-           <Steps></Steps>
-
-
-           <StepsIndex></StepsIndex>
         </div>
     );
 };
 
 export default Testing;
+
+
+/*
+<CardOne_simple></CardOne_simple>
+           <h1>2</h1>
+           <Card_two></Card_two>
+           <Gridimages></Gridimages>
+           <DestinationForm></DestinationForm>
+           <Header_two></Header_two>
+           <Filter></Filter>
+           <SearchFilters></SearchFilters>
+           <HotelList></HotelList>
+           <SingleHotelPage></SingleHotelPage>
+           <Singlebus></Singlebus>           
+           <h1>Plan your tour</h1>
+           <Steps></Steps>
+           <StepsIndex></StepsIndex>
+
+*/
