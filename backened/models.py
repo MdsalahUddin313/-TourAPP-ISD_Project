@@ -52,6 +52,7 @@ class Hotels(models.Model):
          hotel_name=models.CharField(max_length=150)
          hotel_code=models.CharField(max_length=15)
          hotel_address=models.CharField(max_length=250)
+         hotel_images=models.TextField(default="Add images Link")
          hotel_details=models.TextField()
          is_partner=models.BooleanField(default=False)
          active=models.BooleanField(default=False)

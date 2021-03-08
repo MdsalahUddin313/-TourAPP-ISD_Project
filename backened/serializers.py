@@ -36,7 +36,7 @@ class CitySerializer(serializers.ModelSerializer):
 class HotelsSerializer(serializers.ModelSerializer):
     class Meta:
         model = Hotels
-        fields = ['hotel_name', 'hotel_code', 'hotel_address','hotel_details','is_partner','active','city_name']
+        fields = ['hotel_name', 'hotel_code', 'hotel_address','hotel_details','is_partner','active','city_name','hotel_images']
 
 class TransportSerializer(serializers.ModelSerializer):
     class Meta:
