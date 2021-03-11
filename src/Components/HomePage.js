@@ -14,7 +14,8 @@ import Gridimages from './SurfaceInputs/Gridimages';
 
 import Card_two from './Property_holders/Card_two';
 import DestinationForm from './SurfaceInputs/DestinationForm';
-import Header_two from './Header/Header_two';
+//import Header_two from './Header/Header_two';
+import Header_three from './Header/Header_three';
 
 
 const HomePage = () => {
@@ -25,8 +26,9 @@ const HomePage = () => {
    
     return (
         <div>
-            <Header></Header>
-            <Header_two className="sticky-top"></Header_two>
+            {/* <Header></Header>
+            <Header_two></Header_two> */}
+            <Header_three/>
             <Carosoul_Inputs></Carosoul_Inputs>
 
       

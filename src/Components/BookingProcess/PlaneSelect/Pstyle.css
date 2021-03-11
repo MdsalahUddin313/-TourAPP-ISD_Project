@@ -1,0 +1,21 @@
+
+.forms{
+    position: relative;
+    top: 0;
+    background-image: url(https://singularityhub.com/wp-content/uploads/2018/12/airplane-flying-above-clouds_shutterstock_553131187-1068x601.jpg);
+    background-repeat: no-repeat;
+   background-position: center;
+   background-size: cover;
+   padding:25px 35px;
+   color:#034a3c;
+  
+}
+
+.formArea{
+    border-radius: 15px;
+    padding:25px;
+
+    background-color: blanchedalmond;
+    opacity: .7;
+}
+

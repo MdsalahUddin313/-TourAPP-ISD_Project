@@ -12,6 +12,8 @@ import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
 import Container from '@material-ui/core/Container';
+import APIService from '../APIClients/APIService';
+import {useState,useEffect} from 'react';
 
 function Copyright() {
   return (
@@ -46,9 +48,20 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+
 const SignUp=()=> {
   const classes = useStyles();
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
+ 
 
+  const RegisterBtn = () => {
+    APIService.RegisterUser({username, password})
+    .catch(error =>console.log(error))
+  
+  }
+
+  
   return (
     <Container component="main" maxWidth="xs">
       <CssBaseline />
@@ -64,12 +77,13 @@ const SignUp=()=> {
             <Grid item xs={12} sm={6}>
               <TextField
                 autoComplete="fname"
-                name="firstName"
+                name="username"
                 variant="outlined"
                 required
                 fullWidth
-                id="firstName"
+                id="username"
                 label="First Name"
+                value = {username} onChange = {e => setUsername(e.target.value)}
                 autoFocus
               />
             </Grid>
@@ -105,6 +119,7 @@ const SignUp=()=> {
                 type="password"
                 id="password"
                 autoComplete="current-password"
+                value = {password} onChange = {e => setPassword(e.target.value)}
               />
             </Grid>
             <Grid item xs={12}>
@@ -120,6 +135,7 @@ const SignUp=()=> {
             variant="contained"
             color="primary"
             className={classes.submit}
+            onClick = {RegisterBtn} 
           >
             Sign Up
           </Button>

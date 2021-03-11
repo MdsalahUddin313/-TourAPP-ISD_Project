@@ -50,43 +50,59 @@ import {CookiesProvider} from 'react-cookie';
 import BlogsIndex from './Components/Testing/BlogPosts/BlogsIndex';
 import Header_two from './Components/Header/Header_two';
 import Header_three from './Components/Header/Header_three';
+import Trip from './Components/BookingProcess/Trip/Trip';
+import Windex from './Components/BookingProcess/WhatToDo/Windex';
+import HIndex from './Components/BookingProcess/HotelsSelection/HIndex';
+import Tindex from './Components/BookingProcess/TrainBooking/Tindex';
+import Pindex from './Components/BookingProcess/PlaneSelect/Pindex';
+import Vindex from './Components/BookingProcess/VacationRent/Vindex';
+//import TravelIndex from './Components/BookingProcess/MyTimeline/TravelIndex';
+import Travelindex from './Components/BookingProcess/MyTimeline/Travelindex';
+import Favindex from './Components/BookingProcess/FavouritePlaces/Favindex';
+import CreateNewGallery from './Components/BookingProcess/MyTimeline/CreateNewGallery';
 
 function App() {
   return (
     <Router>
     <div className="App">
        
+       <Switch>
+         <Route exact path='/blogs' component={Blog}/>
+         <Route exact path='/aboutus' component={AboutIndex}/>
+         <Route exact path='/trainbook' component={Tindex}/>
+
+       </Switch>
+    <Header_three/>
   
     <Switch>
     <Route exact path='/login' component={Logintesting}/>
-
-
 <Route exact path='/'><HomePage/></Route> 
 <Route exact path='/testing' component={Testing}/>
 <Route exact path='/signin' component={SignInSide}/>
 <Route exact path='/signup' component={SignUp}/>
 <Route exact path='/checkout' component={Checkout}/>
-<Route exact path='/blogs' component={Blog}/>
 <Route exact path='/carosoul' component={Carosoul_Inputs}/>
 <Route exact path='/grids' component={StickyFooter}/>
 <Route exact path='/leftbars' component={LeftBar}/>
 <Route exact path='/contactus' component={Cindex}/>
-<Route exact path='/aboutus' component={AboutIndex}/>
 <Route exact path='/hotels' component={HotelIndex}/>
 <Route exact path='/singlehotels' component={SingleHotelPage}/>
 <Route exact path='/transports' component={TransportIndex}/>
 <Route exact path='/tourplan' component={StepsIndex}/>
+<Route exact path='/hotelsBooking' component={HIndex}/>
 
-<Route exact path='/blogpost' component={BlogsIndex}/>
+<Route exact path='/blogpost' component={Blog}/>
 <Route exact path='/headertwo' component={Header_three}/>
+<Route exact path='/trip' component={Trip}/>
+<Route exact path='/whatTodo' component={Windex}/>
+<Route exact path='/planeBooking' component={Pindex}/>
+<Route exact path='/vacation' component={Vindex}/>
+<Route exact path='/timeline' component={Travelindex}/>
+<Route exact path='/favplace' component={Favindex}/>
+<Route exact path='/createnewGallary' component={CreateNewGallery}/>
 
 
 
-<CookiesProvider>
-      <BrowserRouter>
-     
-      </BrowserRouter>
-      </CookiesProvider>
 
 
 
@@ -115,3 +131,15 @@ function App() {
 }
 
 export default App;
+
+
+/*
+
+
+<CookiesProvider>
+      <BrowserRouter>
+     
+      </BrowserRouter>
+      </CookiesProvider>
+
+*/

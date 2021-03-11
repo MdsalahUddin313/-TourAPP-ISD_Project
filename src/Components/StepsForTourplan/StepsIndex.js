@@ -19,8 +19,7 @@ const StepsIndex = () => {
 
     return (
         <div>
-            <Header></Header>
-            <Header_two></Header_two>
+           
             <h1 style={header_style}>Plan your Tourism in easy and comfortable way.</h1>
             <h6 style={para_style}>We are your partner who tries to help you in your journey.Plan your tour easily and save your time and money</h6>
             

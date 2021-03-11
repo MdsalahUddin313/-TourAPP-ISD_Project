@@ -33,6 +33,10 @@ export default class APIService {
     }
 
 
+
+
+
+
     static DeleteArticle(article_id, token) {
 
       return fetch(`http://127.0.0.1:8000/api/apis/category/${article_id}/`, {
@@ -67,6 +71,7 @@ export default class APIService {
         'method':'POST',
         headers: {
             'Content-Type':'application/json',
+            'Authorization':`Token d03ef30f3aa3b550c60d69d1134a7b38d10526e2`
            
           }, 
           body:JSON.stringify(body)

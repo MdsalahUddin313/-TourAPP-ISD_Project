@@ -16,12 +16,45 @@ import NotificationsIcon from '@material-ui/icons/Notifications';
 import MoreIcon from '@material-ui/icons/MoreVert';
 import clsx from 'clsx'; 
 import Drawer from '@material-ui/core/Drawer';
+//import DrawerWidth from '@material-ui/core/Drawer';
+import ChevronLeftIcon from '@material-ui/icons/ChevronLeft';
+import ChevronRightIcon from '@material-ui/icons/ChevronRight';
 import List from '@material-ui/core/List';
 import Divider from '@material-ui/core/Divider';
 import ListItem from '@material-ui/core/ListItem';
 import ListItemIcon from '@material-ui/core/ListItemIcon';
 import ListItemText from '@material-ui/core/ListItemText';
 import InboxIcon from '@material-ui/icons/MoveToInbox';
+import TripOriginIcon from '@material-ui/icons/TripOrigin';
+import TrainIcon from '@material-ui/icons/Train';
+
+import CameraEnhanceIcon from '@material-ui/icons/CameraEnhance';
+import DirectionsBusIcon from '@material-ui/icons/DirectionsBus';
+import FlightIcon from '@material-ui/icons/Flight';
+import ExploreIcon from '@material-ui/icons/Explore';
+import HomeWorkIcon from '@material-ui/icons/HomeWork';
+import BeachAccessIcon from '@material-ui/icons/BeachAccess';
+import TimelineIcon from '@material-ui/icons/Timeline';
+import PlaceIcon from '@material-ui/icons/Place';
+import FavoriteIcon from '@material-ui/icons/Favorite';
+import ClassIcon from '@material-ui/icons/Class';
+import ContactSupportIcon from '@material-ui/icons/ContactSupport';
+import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
+
+
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
+import HotelIndex from '../Property_holders/Hotels/HotelIndex';
+import Carosoul_Inputs from '../SurfaceInputs/Carosoul_Inputs';
+import Ratingsbar from '../SurfaceInputs/Ratingsbar';
+
+
+const drawerWidth = 240;
+
 
 const useStyles = makeStyles((theme) => ({
   grow: {
@@ -141,6 +174,7 @@ const useStyles = makeStyles((theme) => ({
   content: {
     flexGrow: 1,
     padding: theme.spacing(3),
+    marginLeft: theme.spacing(6),
   },
 
 }));
@@ -154,6 +188,10 @@ export default function Header_three() {
   const isMenuOpen = Boolean(anchorEl);
   const isMobileMenuOpen = Boolean(mobileMoreAnchorEl);
 
+
+const handleopenLink=()=>{
+
+}
   const handleDrawerOpen = () => {
     setOpen(true);
   };
@@ -189,8 +227,10 @@ export default function Header_three() {
       open={isMenuOpen}
       onClose={handleMenuClose}
     >
-      <MenuItem onClick={handleMenuClose}>Profile</MenuItem>
-      <MenuItem onClick={handleMenuClose}>My account</MenuItem>
+      <MenuItem onClick={handleMenuClose}><a href="http://127.0.0.1:8000/admin/">Profile</a></MenuItem>
+      <MenuItem onClick={handleMenuClose}><a href="http://127.0.0.1:8000/admin/">My account</a></MenuItem>
+      <MenuItem onClick={handleMenuClose}><Link to="/signup">Registration</Link></MenuItem>
+    
     </Menu>
   );
 
@@ -230,8 +270,9 @@ export default function Header_three() {
         >
           <AccountCircle />
         </IconButton>
-        <p>Profile</p>
+       <Link to="http://127.0.0.1:8000/admin/"> <p>Profile</p></Link>
       </MenuItem>
+    
     </Menu>
   );
 
@@ -255,8 +296,10 @@ export default function Header_three() {
           >
             <MenuIcon />
           </IconButton>
+          
+          
           <Typography className={classes.title} variant="h6" noWrap>
-            Material-UI
+          <span color="secondary">Tour</span> App  
           </Typography>
           <div className={classes.search}>
             <div className={classes.searchIcon}>
@@ -273,6 +316,7 @@ export default function Header_three() {
           </div>
           <div className={classes.grow} />
           <div className={classes.sectionDesktop}>
+            
             <IconButton aria-label="show 4 new mails" color="inherit">
               <Badge badgeContent={4} color="secondary">
                 <MailIcon />
@@ -328,48 +372,126 @@ export default function Header_three() {
         </div>
         <Divider />
         <List>
-          {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <Link to="/trip">
+          <ListItem button>
+            
+            <ListItemIcon><TripOriginIcon/></ListItemIcon>
+            <ListItemText><Typography>Trip</Typography></ListItemText>           
+          </ListItem>
+          </Link>
+
+
+
+        <Link to="/whatTodo">
+          <ListItem button>
+            <ListItemIcon><ExploreIcon/></ListItemIcon>
+            <ListItemText><Typography>Explore</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+
+
+        <Link to="/planeBooking">
+          <ListItem button>
+            <ListItemIcon><FlightIcon/></ListItemIcon>
+            <ListItemText><Typography>Flights</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+
+        
+
+        <Link to="/hotelsBooking">
+          <ListItem button>
+            <ListItemIcon><DirectionsBusIcon/></ListItemIcon>
+            <ListItemText><Typography>Buses</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+        <Link to="/trainbook">
+          <ListItem button>
+            <ListItemIcon><TrainIcon/></ListItemIcon>
+            <ListItemText><Typography>Train</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+
+        <Link to="/hotelsBooking">
+          <ListItem button>
+            <ListItemIcon><HomeWorkIcon/></ListItemIcon>
+            <ListItemText><Typography>Hotels</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+
+
+
+        <Link to="/vacation">
+          <ListItem button>
+            <ListItemIcon><BeachAccessIcon/></ListItemIcon>
+            <ListItemText><Typography>Vacation rentals</Typography></ListItemText>
+          </ListItem>
+        </Link>
+          <Divider/>
+
+      
+
+
+        <Link to="/timeline">
+          <ListItem button>
+            <ListItemIcon><TimelineIcon/></ListItemIcon>
+            <ListItemText><Typography>Your Timeline</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+
+
+        <Link to="/favplace">
+          <ListItem button>
+            <ListItemIcon><FavoriteIcon/></ListItemIcon>
+            <ListItemText><Typography>Favourite Places</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+
+
+        <Link to="/blogpost">
+          <ListItem button>
+            <ListItemIcon><ViewCarouselIcon/></ListItemIcon>
+            <ListItemText><Typography>Blogs</Typography></ListItemText>
+          </ListItem>
+        </Link>
+
+         
         <Divider />
-        <List>
-          {['All mail', 'Trash', 'Spam'].map((text, index) => (
-            <ListItem button key={text}>
-              <ListItemIcon>{index % 2 === 0 ? <InboxIcon /> : <MailIcon />}</ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItem>
-          ))}
-        </List>
+        <Link to="/aboutus">
+          <ListItem button>            
+            <ListItemIcon><ClassIcon/></ListItemIcon>
+            <ListItemText><Typography>About Us</Typography></ListItemText>
+          </ListItem>
+        </Link> 
+
+        <Link to="/contactus">
+          <ListItem button>            
+            <ListItemIcon><ContactSupportIcon/></ListItemIcon>
+            <ListItemText><Typography>Contact Us</Typography></ListItemText>
+          </ListItem>
+        </Link> 
+
+         </List>
       </Drawer>
       <main className={classes.content}>
         <div className={classes.toolbar} />
-        <Typography paragraph>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt
-          ut labore et dolore magna aliqua. Rhoncus dolor purus non enim praesent elementum
-          facilisis leo vel. Risus at ultrices mi tempus imperdiet. Semper risus in hendrerit
-          gravida rutrum quisque non tellus. Convallis convallis tellus id interdum velit laoreet id
-          donec ultrices. Odio morbi quis commodo odio aenean sed adipiscing. Amet nisl suscipit
-          adipiscing bibendum est ultricies integer quis. Cursus euismod quis viverra nibh cras.
-          Metus vulputate eu scelerisque felis imperdiet proin fermentum leo. Mauris commodo quis
-          imperdiet massa tincidunt. Cras tincidunt lobortis feugiat vivamus at augue. At augue eget
-          arcu dictum varius duis at consectetur lorem. Velit sed ullamcorper morbi tincidunt. Lorem
-          donec massa sapien faucibus et molestie ac.
-        </Typography>
-        <Typography paragraph>
-          Consequat mauris nunc congue nisi vitae suscipit. Fringilla est ullamcorper eget nulla
-          facilisi etiam dignissim diam. Pulvinar elementum integer enim neque volutpat ac
-          tincidunt. Ornare suspendisse sed nisi lacus sed viverra tellus. Purus sit amet volutpat
-          consequat mauris. Elementum eu facilisis sed odio morbi. Euismod lacinia at quis risus sed
-          vulputate odio. Morbi tincidunt ornare massa eget egestas purus viverra accumsan in. In
-          hendrerit gravida rutrum quisque non tellus orci ac. Pellentesque nec nam aliquam sem et
-          tortor. Habitant morbi tristique senectus et. Adipiscing elit duis tristique sollicitudin
-          nibh sit. Ornare aenean euismod elementum nisi quis eleifend. Commodo viverra maecenas
-          accumsan lacus vel facilisis. Nulla posuere sollicitudin aliquam ultrices sagittis orci a.
-        </Typography>
+        
+        <Switch>
+        <Route exact path='/headertwo/explore' component={Ratingsbar}/>
+
+
+        </Switch>
+       
+        
+       
+
       </main>
 
       {renderMobileMenu}

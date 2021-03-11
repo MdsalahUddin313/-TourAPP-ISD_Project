@@ -1,0 +1,27 @@
+.body-image{
+    
+}
+
+.trip-plan{
+    padding:15px;
+    border-radius:25px;
+    box-shadow: 4px 3px 10px 0px grey;
+    background-image: url("https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/v285batch1-fah-02_2.jpg?w=800&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&ixlib=js-2.2.1&s=c55f6f8c69b3a68f115549d7e3c9fe53");
+    background-repeat: repeat; 
+    
+    
+}
+.Search-images{
+    padding: 15px;
+    border-radius: 25px;
+margin: auto;
+margin-bottom: 35px;
+    height: 400px;
+    width: 100%;
+    background-image: url("https://www.technocrazed.com/wp-content/uploads/2015/12/beautiful-wallpaper-download-14.jpg");
+    background-repeat: no-repeat;
+}
+.text-color{
+    padding: 15px;
+    color: #fff;
+}

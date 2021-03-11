@@ -33,9 +33,8 @@ const SingleHotelPage = () => {
 
     return (
         <div>
-             <Header></Header>
-            <Header_two></Header_two>
-            <h1>Single Hotel system</h1>
+            
+            <h1>Details Page</h1>
             <Card style={cardStyles}>
             <Container>
           <Row>

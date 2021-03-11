@@ -1,0 +1,29 @@
+-------------------- Auto-Git Log --------------------
+		Mon Mar 08 2021 23:30:11 GMT+0600 (Bangladesh Standard Time)
+------------------------------------------------------
+
+Modified files:
+* package-lock.json
+* package.json
+* src/App.js
+* src/Components/Authintication/SignInSide.js
+* src/Components/Header/Header_two.js
+* src/Components/HomePage.js
+* src/Components/SurfaceInputs/DestinationForm.js
+* src/Components/Testing/Testing.js
+
+
+Created files:
+* .autogit/autogit.json
+* src/Components/APIClients/APIService.js
+* src/Components/Header/Header_three.js
+* src/Components/Testing/BlogPosts/ArticleList.js
+* src/Components/Testing/BlogPosts/BlogsIndex.js
+* src/Components/Testing/BlogPosts/Form.js
+* src/Components/Testing/BlogPosts/Logintesting.js
+
+
+Deleted files:
+
+
+Renamed files:
