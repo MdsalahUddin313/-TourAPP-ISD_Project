@@ -26,12 +26,12 @@ class Articles_postSerializer(serializers.ModelSerializer):
 class CountrySerializer(serializers.ModelSerializer):
     class Meta:
         model = Country
-        fields = ['country_name', 'country_code']
+        fields = ['country_name', 'country_code','country_imageLink','country_Map']
 
 class CitySerializer(serializers.ModelSerializer):
     class Meta:
         model = City
-        fields = ['city_name', 'city_code', 'country_code']
+        fields = ['city_name', 'city_code', 'country_code','city_imageLink','city_Map','city_description','city_rating']
 
 class HotelsSerializer(serializers.ModelSerializer):
     class Meta:

@@ -38,6 +38,8 @@ class Articles_post(models.Model):
 class Country(models.Model):    
          country_name=models.CharField(max_length=150)
          country_code=models.CharField(max_length=15)
+         country_imageLink=models.TextField(default="")
+         country_Map=models.TextField(default="")
          def __str__(self):
               return self.country_name
 
@@ -45,6 +47,11 @@ class City(models.Model):
          city_name=models.CharField(max_length=150)
          city_code=models.CharField(max_length=15)
          country_code=models.ForeignKey(Country, on_delete=models.CASCADE)
+         city_imageLink=models.TextField(default="")
+         city_Map=models.TextField(default="")
+         city_description=models.TextField(default="")
+         city_rating=models.FloatField(null=True,max_length=25)
+         
          def __str__(self):
               return self.city_name
 
