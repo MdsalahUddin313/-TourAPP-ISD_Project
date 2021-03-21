@@ -61,10 +61,12 @@ class Hotels(models.Model):
          hotel_code=models.CharField(max_length=15)
          hotel_address=models.CharField(max_length=250)
          hotel_images=models.TextField(default="Add images Link")
-         hotel_details=models.TextField()
+         hotel_details=models.TextField(default="")
          is_partner=models.BooleanField(default=False)
          active=models.BooleanField(default=False)
          city_name=models.ForeignKey(City, on_delete=models.CASCADE)
+         hotels_location=models.TextField(default="")
+         hotels_roomprice=models.IntegerField(default=0)
          def __str__(self):
               return self.hotel_name
 
