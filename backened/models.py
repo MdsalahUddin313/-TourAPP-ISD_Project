@@ -28,10 +28,11 @@ class Articles_post(models.Model):
          updatedAt=models.DateTimeField()
          publishedAt=models.DateTimeField()
          content=models.TextField()
-         #author is a foreign key from user
          authors=models.ForeignKey(Authors,on_delete=models.CASCADE)
-         images=models.ImageField(upload_to="media" ,height_field=None ,width_field=None, max_length=None,blank=True)
-         
+         #author is a foreign key from user
+         #images=models.ImageField(upload_to="media" ,height_field=None ,width_field=None, max_length=None,blank=True)
+         images=models.TextField(default="")
+
          def __str__(self):
               return self.title
     
