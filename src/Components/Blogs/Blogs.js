@@ -105,7 +105,7 @@ export default function Blog() {
             ))}
           </Grid>
           <Grid container spacing={5} className={classes.mainGrid}>
-            <Main title="From the firehose" posts={posts} />
+            <Main title="From Blog Post" posts={posts} />
             <Sidebar
               title={sidebar.title}
               description={sidebar.description}

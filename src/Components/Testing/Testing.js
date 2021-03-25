@@ -28,13 +28,13 @@ const Testing = () => {
     const [valueState, setvalueState] = useState([]);
     const [resultData, setresultData] = useState([]);
     const [rData, setrData] = useState([]);
+    const [searchValue,setSearchValue] = useState([]);
 
 
-
-
+    var $ids=2;
+    const locationURL="http://localhost:8000/api/apis/city/";
     const Userurls="http://127.0.0.1:8000/api/apis/authors/";
     var id=0,i=0;
-
 
     // const loginBtn = () => {
     //     APIService.LoginUser({username, password})
@@ -98,6 +98,25 @@ const Testing = () => {
       .catch(err=>console.log(err))
 
    },[])
+
+
+   useEffect(() => {
+    fetch(locationURL,{
+        'method':'GET',
+        headers:{
+            'Content-Type':'application/json',
+            'Authorization':`Token a937dbb84f76aa10637923f459786bc2f32b2f83` 
+
+        }
+    }).then(res =>res.json())
+    .then(res=>setSearchValue(res))    
+    .catch(err=>console.log(err))
+}, [])
+
+const filterCity=searchValue.filter(a=>a.city_name==resultData);
+console.log(filterCity);
+
+
 /*
 {arrayData(valueState)}
             {console.log(resultData)}
@@ -106,18 +125,17 @@ const Testing = () => {
     
 
     return (
-        <div>
+        <div className="container">
             <p>Hello tester</p>
-         
-            {console.log(valueState)}
+                          
+                <label htmlFor = "Title" className = "form-label">Title</label>
+                <input type="text" className = "form-control" id="Title" placeholder = "Please Enter The Title"
+                value = {resultData} onChange = {e => setresultData(e.target.value)}/>
+                {console.log(resultData.city_name)}
+                {console.log(searchValue.city_name)}
+                {searchValue.map((a)=>{return <p>{a.city_name}</p>})}
 
-            {valueState.map((a)=>{return <p>{a.firstname}</p>})}
-            <h1>1</h1>
-
-
-
-            
-           
+                
         </div>
     );
 };
@@ -140,5 +158,10 @@ export default Testing;
            <h1>Plan your tour</h1>
            <Steps></Steps>
            <StepsIndex></StepsIndex>
+
+
+            {valueState.map((a)=>{return <p>{a.firstname}</p>})}
+            {searchValue.map((a)=>{return  <><p>{a.city_name}</p><p>{a.city_code}</p></>})}
+
 
 */

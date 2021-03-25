@@ -8,11 +8,31 @@ import '../../Styles/aboutus.css';
 import StickyFooter from '../../Footer/StickyFooter';
 import Header from '../../Header/Header';
 import Header_two from '../../Header/Header_two';
+import {useParams} from 'react-router-dom';
+import {useEffect,useState} from 'react';
+import {Hindex} from '../../BookingProcess/HotelsSelection/HIndex';
+const SingleHotelPage = (props) => {
 
+  const [hotelsValues, setHotelsValues] = useState([]);
+  let {id} =useParams();
+  
+  //const {CartHandalling}=props.CartHandalling;
+  
+  const uri="http://127.0.0.1:8000/api/apis/hotels/"+id+"/";
+  
+  useEffect(()=>{fetch(uri,{
+      "method": "GET",
+      headers:{
+          'Content-Type':'application/json',
+          'Authorization':'Token d03ef30f3aa3b550c60d69d1134a7b38d10526e2'
+      }
 
-const SingleHotelPage = () => {
+  }).then(res=>res.json())
+  .then(res=>setHotelsValues(res))
+  .catch(err=>console.log(err))
 
-   
+},[])
+
   function handleLink(){
     //Link to="/checkout"
     window.open('/checkout');
@@ -34,19 +54,19 @@ const SingleHotelPage = () => {
     return (
         <div>
             
-            <h1>Details Page</h1>
+            <h1>{id}Details Page</h1>
             <Card style={cardStyles}>
             <Container>
           <Row>
-    <Col><Image style={imagesizes} src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/42/Shaqi_jrvej.jpg/1200px-Shaqi_jrvej.jpg" rounded fluid/></Col>
-    <Col style={text_align} xs={6}>
-        <h4><a href="#">One-Stop Residence & Hotel Opens in new window</a><><Ratingsbar></Ratingsbar>4.5</></h4>
+    <Col xs={9}><Image style={imagesizes} src={hotelsValues.hotel_images} rounded fluid/></Col>
+    <Col style={text_align} xs={3}>
+        <h4><a href="#">{hotelsValues.hotel_name}</a><><Ratingsbar></Ratingsbar>4.5</></h4>
          <p className="text-muted">1,121 reviews</p>
          <p className="text-muted"><strong>Superior twin room</strong></p>
          <p className="text-muted">2 beds, 1 room</p>
-         <p ><strong><span style={room_available}>1 room available,in this hotel</span></strong> </p>
-         <p style={prices}><AccountBalanceWalletIcon></AccountBalanceWalletIcon> Price:$12,000</p>
-         <p className="btn btn-outline-danger"style={prices}><a style={ancor_style} href="/checkout">Book Now -))</a></p>
+         <p ><strong><span className="text-info" style={room_available}>1 room available,in this hotel</span></strong> </p>
+         <p style={prices}><AccountBalanceWalletIcon></AccountBalanceWalletIcon> Price:Tk {hotelsValues.hotels_roomprice}</p>
+         <p className="btn btn-outline-danger text-white"><a style={ancor_style} href="#">Book Now -))</a></p>
     </Col>
     
   </Row>
@@ -62,7 +82,7 @@ const SingleHotelPage = () => {
 <AcUnitIcon></AcUnitIcon>Fabulous breakfast</p>
 
 
-<p style={description_style}><strong>Description:</strong>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since  the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since  the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since  the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since  the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum</p>
+<p style={description_style}><strong>Description:</strong>{hotelsValues.hotel_details}</p>
 
 <h1 className="our_test_header">Hotel rooms Costs List</h1>
 
@@ -104,6 +124,10 @@ const SingleHotelPage = () => {
 
 
 </Container>
+
+<div >
+        <iframe className="mapFrame" src={hotelsValues.hotels_location} width="400" height="500" allowFullscreen="true" loading="lazy"></iframe>
+        </div>
             </Card>
 
             <StickyFooter></StickyFooter>

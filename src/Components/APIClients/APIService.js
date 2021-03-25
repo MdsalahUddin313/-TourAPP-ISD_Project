@@ -60,6 +60,10 @@ export default class APIService {
           body:JSON.stringify(body)
 
       }).then(resp => resp.json())
+      .then(data=>
+        console.log(data)
+      )
+      .catch(err => console.log(err))
        
 
     }

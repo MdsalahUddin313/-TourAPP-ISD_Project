@@ -27,8 +27,9 @@ const HomePage = () => {
     return (
         <div>
             {/* <Header></Header>
-            <Header_two></Header_two> */}
-            <Header_three/>
+            <Header_two></Header_two>
+            //<Header_three/> */}
+            
             <Carosoul_Inputs></Carosoul_Inputs>
 
       

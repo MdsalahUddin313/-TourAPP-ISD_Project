@@ -27,7 +27,7 @@ import Error from './Components/Errors/Error';
 import Testing from './Components/Testing/Testing';
 import SignInSide from './Components/Authintication/SignInSide';
 import SignUp from './Components/Authintication/SignUp';
-import Checkout from './Components/PymentProcess/Checkout';
+import Checkout from './Components/BookingProcess/Checkout/Checkout';
 import Blog from './Components/Blogs/Blogs';
 import RecipeReviewCard from './Components/SurfaceInputs/RecipeReviewCard';
 import Carosoul_Inputs from './Components/SurfaceInputs/Carosoul_Inputs';
@@ -60,6 +60,10 @@ import Vindex from './Components/BookingProcess/VacationRent/Vindex';
 import Travelindex from './Components/BookingProcess/MyTimeline/Travelindex';
 import Favindex from './Components/BookingProcess/FavouritePlaces/Favindex';
 import CreateNewGallery from './Components/BookingProcess/MyTimeline/CreateNewGallery';
+import SingleBlogPages from './Components/Blogs/SingleBlogPages';
+import Busindex from './Components/BookingProcess/Busbooking/Busindex';
+
+//import Stripe from './Components/BookingProcess/Checkout/Stripe';
 
 function App() {
   return (
@@ -68,14 +72,14 @@ function App() {
        
        <Switch>
          <Route exact path='/blogs' component={Blog}/>
-         <Route exact path='/aboutus' component={AboutIndex}/>
          <Route exact path='/trainbook' component={Tindex}/>
-
+         
        </Switch>
     <Header_three/>
   
-    <Switch>
-    <Route exact path='/login' component={Logintesting}/>
+  
+  <Switch>
+<Route exact path='/login' component={Logintesting}/>
 <Route exact path='/'><HomePage/></Route> 
 <Route exact path='/testing' component={Testing}/>
 <Route exact path='/signin' component={SignInSide}/>
@@ -86,12 +90,12 @@ function App() {
 <Route exact path='/leftbars' component={LeftBar}/>
 <Route exact path='/contactus' component={Cindex}/>
 <Route exact path='/hotels' component={HotelIndex}/>
-<Route exact path='/singlehotels' component={SingleHotelPage}/>
+<Route exact path='/hotelsBooking/:id' component={SingleHotelPage}/>
 <Route exact path='/transports' component={TransportIndex}/>
 <Route exact path='/tourplan' component={StepsIndex}/>
 <Route exact path='/hotelsBooking' component={HIndex}/>
-
 <Route exact path='/blogpost' component={Blog}/>
+<Route exact path='/blogpost/:id' component={SingleBlogPages}/>
 <Route exact path='/headertwo' component={Header_three}/>
 <Route exact path='/trip' component={Trip}/>
 <Route exact path='/whatTodo' component={Windex}/>
@@ -100,15 +104,11 @@ function App() {
 <Route exact path='/timeline' component={Travelindex}/>
 <Route exact path='/favplace' component={Favindex}/>
 <Route exact path='/createnewGallary' component={CreateNewGallery}/>
-
-
-
-
-
-
-
+<Route exact path='/busbook' component={Busindex}/>
+<Route exact path='/aboutus' component={AboutIndex}/>
       
 
+<Route exact path='*' component={Error}/>
       
 
      
@@ -121,7 +121,6 @@ function App() {
 
 
      
-      <Route exact path='*' component={Error}/>
 
 
     </Switch>

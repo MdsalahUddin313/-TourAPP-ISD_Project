@@ -40,7 +40,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ClassIcon from '@material-ui/icons/Class';
 import ContactSupportIcon from '@material-ui/icons/ContactSupport';
 import ViewCarouselIcon from '@material-ui/icons/ViewCarousel';
-
+import HomeIcon from '@material-ui/icons/Home';
 
 import {
   BrowserRouter as Router,
@@ -173,7 +173,7 @@ const useStyles = makeStyles((theme) => ({
   },
   content: {
     flexGrow: 1,
-    padding: theme.spacing(3),
+    padding: theme.spacing(0),
     marginLeft: theme.spacing(6),
   },
 
@@ -372,6 +372,17 @@ const handleopenLink=()=>{
         </div>
         <Divider />
         <List>
+        
+
+        <Link to="/">
+          <ListItem button>
+            
+            <ListItemIcon><HomeIcon/></ListItemIcon>
+            <ListItemText><Typography>Home</Typography></ListItemText>           
+          </ListItem>
+          </Link>
+
+
         <Link to="/trip">
           <ListItem button>
             
@@ -401,7 +412,7 @@ const handleopenLink=()=>{
 
         
 
-        <Link to="/hotelsBooking">
+        <Link to="/busbook">
           <ListItem button>
             <ListItemIcon><DirectionsBusIcon/></ListItemIcon>
             <ListItemText><Typography>Buses</Typography></ListItemText>
@@ -426,17 +437,7 @@ const handleopenLink=()=>{
 
 
 
-        <Link to="/vacation">
-          <ListItem button>
-            <ListItemIcon><BeachAccessIcon/></ListItemIcon>
-            <ListItemText><Typography>Vacation rentals</Typography></ListItemText>
-          </ListItem>
-        </Link>
-          <Divider/>
-
-      
-
-
+        
         <Link to="/timeline">
           <ListItem button>
             <ListItemIcon><TimelineIcon/></ListItemIcon>
