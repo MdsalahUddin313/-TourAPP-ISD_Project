@@ -43,7 +43,7 @@ class CityViewSet(viewsets.ModelViewSet):
 class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all()
     serializer_class =LocationSerializer
-    search_fields = ['Location_name']
+    
 
 
 class HotelsViewSet(viewsets.ModelViewSet):
