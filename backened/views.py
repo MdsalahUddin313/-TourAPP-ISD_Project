@@ -40,6 +40,10 @@ class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
     serializer_class =CitySerializer
 
+class LocationViewSet(viewsets.ModelViewSet):
+    queryset = Location.objects.all()
+    serializer_class =LocationSerializer
+
 
 class HotelsViewSet(viewsets.ModelViewSet):
     queryset = Hotels.objects.all()

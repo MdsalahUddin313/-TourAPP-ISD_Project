@@ -56,6 +56,28 @@ class City(models.Model):
          def __str__(self):
               return self.city_name
 
+
+class Location(models.Model):
+       Location_name=models.CharField(max_length=120)
+       Location_map=models.TextField(default="")
+       Location_image=models.TextField(default="")
+       Hotels_name_one=models.CharField(max_length=120)
+       Hotels_image_one=models.TextField(default="")
+       Hotels_name_two=models.CharField(max_length=120)
+       Hotels_image_two=models.TextField(default="")
+       Hotels_name_three=models.CharField(max_length=120)
+       Hotels_image_three=models.TextField(default="")       
+       location_one=models.CharField(max_length=120)
+       location_image_one=models.TextField(default="")
+       location_name_two=models.CharField(max_length=120)
+       location_image_two=models.TextField(default="")
+       location_name_three=models.CharField(max_length=120)
+       location_image_three=models.TextField(default="")
+
+       def __str__(self):
+            return self.Location_name
+
+
 class Hotels(models.Model):    
          hotel_name=models.CharField(max_length=150)
          hotel_code=models.CharField(max_length=15)
