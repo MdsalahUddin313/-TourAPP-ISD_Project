@@ -77,6 +77,16 @@ class Location(models.Model):
        def __str__(self):
             return self.Location_name
 
+class ContactUs(models.Model):
+       First_name=models.CharField(max_length=120)
+       Last_name=models.CharField(max_length=120)
+       Email_name=models.CharField(max_length=120)
+       Message=models.TextField(blank=True)
+
+       def __str__(self):
+            return self.First_name
+       
+
 
 class Hotels(models.Model):    
          hotel_name=models.CharField(max_length=150)

@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Authors, Comments,category,Articles_post,Country,City,Hotels,transports,Location 
+from .models import Authors, Comments,category,Articles_post,Country,City,Hotels,transports,Location,ContactUs 
 # Register your models here.
 
 admin.site.register(Authors)
@@ -11,6 +11,7 @@ admin.site.register(Hotels)
 admin.site.register(transports)
 admin.site.register(Comments)
 admin.site.register(Location)
+admin.site.register(ContactUs)
 
 
 

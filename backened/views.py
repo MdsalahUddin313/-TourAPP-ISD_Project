@@ -44,7 +44,9 @@ class LocationViewSet(viewsets.ModelViewSet):
     queryset = Location.objects.all()
     serializer_class =LocationSerializer
     
-
+class ContactUsViewSet(viewsets.ModelViewSet):
+    queryset = ContactUs.objects.all()
+    serializer_class =ContactUsSerializer
 
 class HotelsViewSet(viewsets.ModelViewSet):
     queryset = Hotels.objects.all()

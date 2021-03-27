@@ -21,6 +21,7 @@ router.register('transport',transportsViewSet,basename='Transport')
 router.register('users',UserViewSet ,basename='users')
 router.register('comments',CommentsViewSet ,basename='comments')
 router.register('locations',LocationViewSet ,basename='locations')
+router.register('ContactUs',ContactUsViewSet ,basename='ContactUs')
 
 #router.register('users',views.UserViewSet ,basename='users')
 
