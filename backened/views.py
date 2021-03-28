@@ -48,6 +48,19 @@ class ContactUsViewSet(viewsets.ModelViewSet):
     queryset = ContactUs.objects.all()
     serializer_class =ContactUsSerializer
 
+class ToDoViewSet(viewsets.ModelViewSet):
+    queryset = ToDo.objects.all()
+    serializer_class =ToDoSerializer
+
+class DoneViewSet(viewsets.ModelViewSet):
+    queryset = Done.objects.all()
+    serializer_class =DoneSerializer
+
+
+class ContactUsViewSet(viewsets.ModelViewSet):
+    queryset = ContactUs.objects.all()
+    serializer_class =ContactUsSerializer
+
 class HotelsViewSet(viewsets.ModelViewSet):
     queryset = Hotels.objects.all()
     serializer_class =HotelsSerializer

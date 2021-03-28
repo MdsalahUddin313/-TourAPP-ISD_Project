@@ -44,6 +44,15 @@ class Country(models.Model):
          def __str__(self):
               return self.country_name
 
+class ToDo(models.Model):    
+         todo_title_name=models.CharField(max_length=255)         
+         def __str__(self):
+              return self.todo_title_name
+class Done(models.Model):    
+         done_title_name=models.CharField(max_length=255)         
+         def __str__(self):
+              return self.done_title_name
+
 class City(models.Model):    
          city_name=models.CharField(max_length=150)
          city_code=models.CharField(max_length=15)

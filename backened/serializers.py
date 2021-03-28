@@ -40,6 +40,18 @@ class LocationSerializer(serializers.ModelSerializer):
         fields = ['id','Location_name', 'Location_map', 'Location_image','Hotels_name_one','Hotels_image_one','Hotels_name_two','Hotels_image_two','Hotels_name_three','Hotels_image_three','location_one','location_image_one','location_name_two','location_image_two','location_name_three','location_image_three']
 
 
+class ToDoSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = ToDo
+        fields = ['id','todo_title_name']
+
+class DoneSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = Done
+        fields = ['id','done_title_name']
+
+
+
 class ContactUsSerializer(serializers.ModelSerializer):
     class Meta:
         model = ContactUs
