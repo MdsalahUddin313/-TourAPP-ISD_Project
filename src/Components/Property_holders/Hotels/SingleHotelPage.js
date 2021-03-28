@@ -11,7 +11,16 @@ import Header_two from '../../Header/Header_two';
 import {useParams} from 'react-router-dom';
 import {useEffect,useState} from 'react';
 import {Hindex} from '../../BookingProcess/HotelsSelection/HIndex';
+import ArrowForwardIcon from '@material-ui/icons/ArrowForward';
+import { InputGroup } from 'react-bootstrap';
+ 
+import {Link} from 'react-router-dom';
+import {useParam} from 'react-router-dom';
+import DateRangeIcon from '@material-ui/icons/DateRange';
+
+
 const SingleHotelPage = (props) => {
+
 
   const [hotelsValues, setHotelsValues] = useState([]);
   let {id} =useParams();
@@ -42,7 +51,7 @@ const SingleHotelPage = (props) => {
     const text_align={textAlign:"left"}
     const text_ratings={fontsize:"2px",padding:"3px",backgroundColor:"yellow" ,borderRadius:"5px",borderWidth:"4px",borderColor:"red",textAlign:"left"}
     const prices={fontSize:"20px",paddingTop:"5px",paddingBottom:"5px"}
-    const cardStyles={padding:"15px",borderColor:"red",borderWidth:"2px",borderRadius:"5px",}
+    const cardStyles={padding:"15px",borderWidth:"2px",borderRadius:"5px",}
     const imagesizes={height:"400px",width:"100%"}
     const description_style={textAlign:"left",marginTop:"35px"}
     const room_available={color:"red"}
@@ -54,21 +63,44 @@ const SingleHotelPage = (props) => {
     return (
         <div>
             
-            <h1>{id}Details Page</h1>
-            <Card style={cardStyles}>
+            
+            <Card >
+            <h1 className="m-4 text-info">Room Details</h1>
             <Container>
           <Row>
     <Col xs={9}><Image style={imagesizes} src={hotelsValues.hotel_images} rounded fluid/></Col>
-    <Col style={text_align} xs={3}>
+    <Col className="border border-info rounded" style={text_align} xs={3}>
         <h4><a href="#">{hotelsValues.hotel_name}</a><><Ratingsbar></Ratingsbar>4.5</></h4>
          <p className="text-muted">1,121 reviews</p>
          <p className="text-muted"><strong>Superior twin room</strong></p>
          <p className="text-muted">2 beds, 1 room</p>
          <p ><strong><span className="text-info" style={room_available}>1 room available,in this hotel</span></strong> </p>
          <p style={prices}><AccountBalanceWalletIcon></AccountBalanceWalletIcon> Price:Tk {hotelsValues.hotels_roomprice}</p>
-         <p className="btn btn-outline-danger text-white"><a style={ancor_style} href="#">Book Now -))</a></p>
+         <p className="btn btn-danger"><Link className="text-white" to={`checkout/${hotelsValues.id}`} >Book Now <ArrowForwardIcon></ArrowForwardIcon></Link></p>
     </Col>
-    
+    <Form method="POST" className="pt-3">
+           <Form.Row>              
+              <Col>
+              <InputGroup className="mb-2">
+               <InputGroup.Prepend>
+                  <InputGroup.Text><DateRangeIcon/>Check In</InputGroup.Text>
+               </InputGroup.Prepend>
+                 <FormControl id="inlineFormInputGroup" type="date" placeholder="Username" />
+               </InputGroup>
+              </Col>
+              <Col>
+              <InputGroup className="mb-2">
+               <InputGroup.Prepend>
+                  <InputGroup.Text><DateRangeIcon/>Check Out</InputGroup.Text>
+               </InputGroup.Prepend>
+                 <FormControl id="inlineFormInputGroup" type="date" placeholder="Username" />
+               </InputGroup>
+              </Col>
+
+           
+ </Form.Row>
+</Form>
+
   </Row>
 <p style={description_style}> Most popular facilities<br/>
 <AcUnitIcon></AcUnitIcon>2 swimming pools (Temporarily closed)<br/>
@@ -130,7 +162,7 @@ const SingleHotelPage = (props) => {
         </div>
             </Card>
 
-            <StickyFooter></StickyFooter>
+           
         </div>
     );
 };

@@ -15,7 +15,7 @@ import FavoriteIcon from '@material-ui/icons/Favorite';
 import ShareIcon from '@material-ui/icons/Share';
 import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import MoreVertIcon from '@material-ui/icons/MoreVert';
-import Checkout from '../PymentProcess/Checkout';
+import Checkout from '../PymentProcess/Checkouts';
 import {BrowserRouter as Link} from 'react-router-dom';
 
 

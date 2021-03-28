@@ -1,4 +1,5 @@
 import logo from './logo.svg';
+//import StripeIndexes from './Components/StripePayments/StripeIndexes';
 import { fade, makeStyles } from '@material-ui/core/styles';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
@@ -27,7 +28,7 @@ import Error from './Components/Errors/Error';
 import Testing from './Components/Testing/Testing';
 import SignInSide from './Components/Authintication/SignInSide';
 import SignUp from './Components/Authintication/SignUp';
-import Checkout from './Components/BookingProcess/Checkout/Checkout';
+
 import Blog from './Components/Blogs/Blogs';
 import RecipeReviewCard from './Components/SurfaceInputs/RecipeReviewCard';
 import Carosoul_Inputs from './Components/SurfaceInputs/Carosoul_Inputs';
@@ -62,6 +63,14 @@ import Favindex from './Components/BookingProcess/FavouritePlaces/Favindex';
 import CreateNewGallery from './Components/BookingProcess/MyTimeline/CreateNewGallery';
 import SingleBlogPages from './Components/Blogs/SingleBlogPages';
 import Busindex from './Components/BookingProcess/Busbooking/Busindex';
+import Checkouts from './Components/PymentProcess/Checkouts';
+import Wmain from './Components/BookingProcess/WhatToDo/Wmain';
+import Header_four from './Components/Header/Header_four';
+import HomeIndex from './Components/Homepage/HomeIndex';
+import Navbarpart from './Components/Homepage/Navbarpart';
+import Footer from './Components/Footer/Footer';
+import ToDoindex from './Components/ToDoLists/ToDoindex';
+//import StripeIndexes from './Components/StripePayments/StripeIndexes';
 
 //import Stripe from './Components/BookingProcess/Checkout/Stripe';
 
@@ -70,21 +79,21 @@ function App() {
     <Router>
     <div className="App">
        
-       <Switch>
-         <Route exact path='/blogs' component={Blog}/>
-         <Route exact path='/trainbook' component={Tindex}/>
-         
-       </Switch>
+     
+    {/*
     <Header_three/>
-  
+    */}
+  <Navbarpart></Navbarpart>
   
   <Switch>
 <Route exact path='/login' component={Logintesting}/>
-<Route exact path='/'><HomePage/></Route> 
+<Route exact path='/'><HomeIndex></HomeIndex></Route> 
 <Route exact path='/testing' component={Testing}/>
 <Route exact path='/signin' component={SignInSide}/>
 <Route exact path='/signup' component={SignUp}/>
-<Route exact path='/checkout' component={Checkout}/>
+
+<Route exact path='/hotelsBooking/checkout/:id' component={Checkouts}/>
+
 <Route exact path='/carosoul' component={Carosoul_Inputs}/>
 <Route exact path='/grids' component={StickyFooter}/>
 <Route exact path='/leftbars' component={LeftBar}/>
@@ -93,12 +102,16 @@ function App() {
 <Route exact path='/hotelsBooking/:id' component={SingleHotelPage}/>
 <Route exact path='/transports' component={TransportIndex}/>
 <Route exact path='/tourplan' component={StepsIndex}/>
+
+
 <Route exact path='/hotelsBooking' component={HIndex}/>
 <Route exact path='/blogpost' component={Blog}/>
 <Route exact path='/blogpost/:id' component={SingleBlogPages}/>
-<Route exact path='/headertwo' component={Header_three}/>
+<Route exact path='/headertwo' component={Header_four}/>
 <Route exact path='/trip' component={Trip}/>
-<Route exact path='/whatTodo' component={Windex}/>
+<Route exact path='/whatTodo/:id' component={Windex}/>
+<Route exact path='/whatTodo' component={Wmain}/>
+
 <Route exact path='/planeBooking' component={Pindex}/>
 <Route exact path='/vacation' component={Vindex}/>
 <Route exact path='/timeline' component={Travelindex}/>
@@ -106,6 +119,13 @@ function App() {
 <Route exact path='/createnewGallary' component={CreateNewGallery}/>
 <Route exact path='/busbook' component={Busindex}/>
 <Route exact path='/aboutus' component={AboutIndex}/>
+<Route exact path='/todo' component={ToDoindex}/>
+<Route exact path='/blogs' component={Blog}/>
+<Route exact path='/trainbook' component={Tindex}/>
+         
+
+
+<Route exact path='/h' component={HomeIndex}/>
       
 
 <Route exact path='*' component={Error}/>
@@ -124,8 +144,11 @@ function App() {
 
 
     </Switch>
+    
+    <Footer></Footer>
     </div>
     </Router>
+
   );
 }
 
@@ -140,5 +163,7 @@ export default App;
      
       </BrowserRouter>
       </CookiesProvider>
+
+      <Route exact path='/hotelsBooking/checkout/:id' component={Checkouts}/>
 
 */

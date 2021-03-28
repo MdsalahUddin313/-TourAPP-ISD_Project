@@ -15,7 +15,6 @@ const AboutIndex = () => {
     return (
         <div>
                
-               <Header_two></Header_two>
                <Aboutus></Aboutus>
                <CardTeams></CardTeams>
 
@@ -30,7 +29,6 @@ const AboutIndex = () => {
                <p>______________</p>
                </div>
                <Sponsors></Sponsors>
-               <StickyFooter></StickyFooter>
         </div>
     );
 };

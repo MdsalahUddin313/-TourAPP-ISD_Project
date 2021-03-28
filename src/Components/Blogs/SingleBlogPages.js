@@ -50,7 +50,7 @@ const SingleBlogPages = () => {
         
         <Like></Like>
         <CommentsSection></CommentsSection>
-        <StickyFooter></StickyFooter>
+       
         </div>
     );
 };

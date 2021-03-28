@@ -9,7 +9,7 @@ import { Button,Form,Image,Col,Row } from 'react-bootstrap';
 import { makeStyles } from '@material-ui/core/styles';
 import {Link} from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
-
+import {useEffect,useState} from 'react';
 
 const useStyles = makeStyles({
     root: {
@@ -25,6 +25,27 @@ const useStyles = makeStyles({
   });
 const Travelindex = () => {
     const classes = useStyles();
+    const [GalleryLists, setGalleryLists] = useState([]);
+    const uri=`http://127.0.0.1:8000/api/apis/gallery/`;
+    const imageStyle={
+       width:"200px",       
+
+    }
+  
+    useEffect(()=>{fetch(uri,{
+        "method": "GET",
+        headers:{
+            'Content-Type':'application/json',
+            'Authorization':'Token d03ef30f3aa3b550c60d69d1134a7b38d10526e2'
+        }
+
+    }).then(res=>res.json())
+    .then(res=>setGalleryLists(res))
+    .catch(err=>console.log(err))
+
+},[])
+
+console.log(GalleryLists);
     return (
         <div>
             <h1>Your visited Places record</h1>
@@ -159,70 +180,30 @@ const Travelindex = () => {
 <p className="text-left container"><Link to="/createnewGallary">Create New</Link></p>
 <p className="text-left  container">Sundarbans 2.12.2020</p>
 
-<Row className="mt-5 container m-auto pb-5">
-        <Col>
-        <Card className={classes.gallery}>
-          <CardActionArea>
-          <CardMedia
-                   className={classes.gallery}
-                   image="https://www.ekushey-tv.com/media/imgAll/2019December/sundarban-eb-2005200348.jpg"
-                    title="Contemplative Reptile"
-            />
-            </CardActionArea>
-           </Card>
+{GalleryLists.map((a)=>{return (
 
-
+<div className="row">
+         
+    
+      
+       <div className="col-md-3 col-sm-12 m-1">
        
-       </Col>
-       <Col>
-       <Card className={classes.gallery}>
-          <CardActionArea>
-          <CardMedia
-                   className={classes.gallery}
-                   image="https://www.ekushey-tv.com/media/imgAll/2019December/sundarban-eb-2005200348.jpg"
-                    title="Contemplative Reptile"
-            />
-            </CardActionArea>
-           </Card>
-       </Col>
+       <Card className="shadow">
+          <Image src={a.Gallery_image} alt="image" style={imageStyle} ></Image>
+          <p>{a.Gallery_name}</p>
+          </Card>
+    </div>
 
-       <Col>
-       <Card className={classes.gallery}>
-          <CardActionArea>
-          <CardMedia
-                   className={classes.gallery}
-                   image="https://www.ekushey-tv.com/media/imgAll/2019December/sundarban-eb-2005200348.jpg"
-                    title="Contemplative Reptile"
-            />
-            </CardActionArea>
-           </Card>
-       </Col>
+</div>
+);
 
-       <Col>
-       <Card className={classes.gallery}>
-          <CardActionArea>
-          <CardMedia
-                   className={classes.gallery}
-                   image="https://www.ekushey-tv.com/media/imgAll/2019December/sundarban-eb-2005200348.jpg"
-                    title="Contemplative Reptile"
-            />
-            </CardActionArea>
-           </Card>
-       </Col>
+})}
 
-
-       <Col>
-       <Card className={classes.gallery}>
-          <CardActionArea>
-          <CardMedia
-                   className={classes.gallery}
-                   image="https://www.ekushey-tv.com/media/imgAll/2019December/sundarban-eb-2005200348.jpg"
-                    title="Contemplative Reptile"
-            />
-            </CardActionArea>
-           </Card>
-       </Col>
-
+<Row className="mt-5 container m-auto pb-5">
+        
+     
+        
+        
 
 
      

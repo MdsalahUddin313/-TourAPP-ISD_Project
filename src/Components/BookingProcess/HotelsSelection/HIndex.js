@@ -75,6 +75,10 @@ const HIndex = () => {
     const [Cart, setCart] = useState([]);
     const [cityName,setCityName] =useState([]);
     const [hotelsName,sethotelsName] =useState([]);
+    const headerStyle={
+      fontFamily: "Georgia, 'Times New Roman', Times, serif",
+
+    };
 
     const classes = useStyles();
     const handleChange = (event) => {
@@ -90,7 +94,7 @@ const HIndex = () => {
 
 
 
-        <h1 className="pb-4">Find your Hotels</h1>
+        <h1 className="text-centre text-info mt-5 mb-4 p-2" style={headerStyle}>Find your Hotels</h1>
         <div className="container ">
       <div className="row hotelbody">
         <div className="col-md-6">

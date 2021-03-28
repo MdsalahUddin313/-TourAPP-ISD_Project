@@ -56,7 +56,12 @@ const SignUp=()=> {
  
 
   const RegisterBtn = () => {
-    APIService.RegisterUser({username, password})
+    var min = 1;
+        var max = 100000000;
+        var rand =  min + (Math.random()*(max-min));
+        console.log(Math.ceil(rand));
+        var id=Math.ceil(rand);
+    APIService.RegisterUser({id,username, password})
     .catch(error =>console.log(error))
   
   }

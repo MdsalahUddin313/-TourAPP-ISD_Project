@@ -12,6 +12,11 @@ import Grid from '@material-ui/core/Grid';
 import LockOutlinedIcon from '@material-ui/icons/LockOutlined';
 import Typography from '@material-ui/core/Typography';
 import { makeStyles } from '@material-ui/core/styles';
+import {useState,useEffect} from 'react';
+import APISetvice from '../APIClients/APIService';
+import APIService from '../APIClients/APIService';
+import Alert from '@material-ui/lab/Alert';
+import {Toast} from 'react-bootstrap';
 
 function Copyright() {
   return (
@@ -69,10 +74,35 @@ const useStyles = makeStyles((theme) => ({
 
 export default function Contactus() {
   const classes = useStyles();
+  const [First_name, setFname] = useState('');
+  const [Last_name, setLname] = useState('');
+  const [Message, setMessage] = useState('');
+  const [Email_name, setEmail] = useState('');
+  const [show, setShow] = useState(false);
+  //const [id, setId] = useState('');
+  
+  const SubmitData = () => {
+
+    var min = 1;
+    var max = 10000000000;
+    var rand =  min + (Math.random()*(max-min));
+    console.log(Math.ceil(rand));
+    var id=Math.ceil(rand);
+    
+    console.log({id,First_name,Last_name,Email_name,Message})
+    setShow(true)
+  
+      APIService.ContactUs({id,First_name,Last_name,Email_name,Message})
+      .catch(error =>console.log(error))
+     
+  }
+ 
 
   return (
+    
     <Grid container component="main" className={classes.root}>
       <CssBaseline />
+      
       <Grid item xs={false} sm={4} md={7} className={classes.image} >
         <h1 className={classes.header_font_color}>How can we help you? </h1>
        
@@ -96,15 +126,20 @@ export default function Contactus() {
           <form className={classes.form} noValidate>
           
           <Grid container spacing={2}>
+      
+ 
           <Grid item xs={12} sm={6}>
+              
               <TextField
                 autoComplete="fname"
-                name="firstName"
+                name="First_name"
                 variant="outlined"
                 required
                 fullWidth
                 id="firstName"
                 label="First Name"
+                onChange={(e)=>setFname(e.target.value)}
+                value={First_name}
                 autoFocus
               />
             </Grid>
@@ -115,7 +150,9 @@ export default function Contactus() {
                 fullWidth
                 id="lastName"
                 label="Last Name"
-                name="lastName"
+                name="Last_name"
+                onChange={(e)=>setLname(e.target.value)}
+                value={Last_name}
                 autoComplete="lname"
               />
             </Grid>
@@ -127,7 +164,9 @@ export default function Contactus() {
               fullWidth
               id="email"
               label="Email Address"
-              name="email"
+              name="Email_name"
+              onChange={(e)=>setEmail(e.target.value)}
+              value={Email_name}
               autoComplete="email"
               autoFocus
             />
@@ -140,6 +179,8 @@ export default function Contactus() {
               label="Message"
               type="text"
               id="Message"
+              onChange={(e)=>setMessage(e.target.value)}
+              value={Message}
               autoComplete="text"
               style={message_style}
             />
@@ -150,9 +191,22 @@ export default function Contactus() {
               variant="contained"
               color="primary"
               className={classes.submit}
-            >
+              onClick={SubmitData}
+           
+           >
               Submit
             </Button>
+
+
+
+            <Toast onClose={() => setShow(false)} show={show} delay={100000} autohide>
+          <Toast.Header>            
+            <strong className="mr-auto text-success">Submitted</strong>
+            <small>just now</small>
+          </Toast.Header>
+          <Toast.Body className="text-success">Woohoo, you're Text submitted successfully,Thank you.</Toast.Body>
+        </Toast>
+     
             <Grid container>
               <Grid item xs>
                 

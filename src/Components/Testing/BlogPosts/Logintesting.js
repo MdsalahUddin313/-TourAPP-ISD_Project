@@ -9,13 +9,13 @@ const Logintesting = () => {
     const [username, setUsername] = useState('')
     const [password, setPassword] = useState('')
     const [token, setToken] = useCookies(['mytoken'])
-    const [isLogin, setLogin] = useState(true)
+    const [isLogin, setLogin] = useState(false)
     let history = useHistory()
 
 
     useEffect(() => {
         if(token['mytoken']) {
-            history.push('/blogpost');
+            history.push('/');
 
         }
     }, [token])
@@ -26,6 +26,7 @@ const Logintesting = () => {
         .catch(error => console.log(error));
 
        // BlogsIndex.loninUserName(username);
+       {console.log(token)}
 
 
 
@@ -38,7 +39,8 @@ const Logintesting = () => {
 
     }
     return (
-        <div className = "App">
+        <div className = "App container row">
+            <div className="col-md-5 m-auto">
             <br/>
             <br/>
             {isLogin ? <h1>Please Login </h1> : <h1>Please Register </h1>}
@@ -76,6 +78,7 @@ const Logintesting = () => {
              :  <h5>If You Have Account, Please <button className = "btn btn-primary" onClick = {() => setLogin(true)} >Login</button>Here</h5>
             }
 
+            </div>
             </div>
 
         </div>

@@ -154,7 +154,7 @@ const CartHandalling=(bodyData)=>{
                </Button>
             </Link>
            
-           <Link onClick={()=>onclickHandaller(a)} to={`${url}/${a.id}`}>
+           <Link onClick={()=>onclickHandaller(a)} to={`hotelsBooking/${a.id}`}>
               <Button size="small" color="primary">
                   Learn More
               </Button>
