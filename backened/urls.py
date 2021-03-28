@@ -24,6 +24,7 @@ router.register('locations',LocationViewSet ,basename='locations')
 router.register('ContactUs',ContactUsViewSet ,basename='ContactUs')
 router.register('todo',ToDoViewSet ,basename='todo')
 router.register('done',DoneViewSet ,basename='done')
+router.register('gallery',GalleryViewSet ,basename='gallery')
 
 
 #router.register('users',views.UserViewSet ,basename='users')

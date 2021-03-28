@@ -75,6 +75,12 @@ class CommentsSerializer(serializers.HyperlinkedModelSerializer):
         model = Comments
         fields = ['id','Comments_name', 'Comments_code']
 
+class GallerySerializer(serializers.HyperlinkedModelSerializer):
+    class Meta:
+        model = Gallery
+        fields = ['id','Gallery_name', 'Gallery_image']
+
+
 
 class UserSerializer(serializers.ModelSerializer):
     class Meta:

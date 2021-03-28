@@ -131,3 +131,12 @@ class Comments(models.Model):
 
          def __str__(self):
               return self.Comments_name
+
+
+class Gallery(models.Model):    
+         Gallery_name=models.CharField(max_length=150)
+         Gallery_image=models.TextField(default="")
+         def __str__(self):
+              return self.Gallery_name
+
+

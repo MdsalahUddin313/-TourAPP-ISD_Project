@@ -35,6 +35,10 @@ class CountryViewSet(viewsets.ModelViewSet):
     queryset = Country.objects.all()
     serializer_class =CountrySerializer
 
+class GalleryViewSet(viewsets.ModelViewSet):
+    queryset = Gallery.objects.all()
+    serializer_class =GallerySerializer
+
 
 class CityViewSet(viewsets.ModelViewSet):
     queryset = City.objects.all()
